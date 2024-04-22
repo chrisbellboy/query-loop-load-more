@@ -1,5 +1,8 @@
 # Query Loop Load More WordPress Plugin
 
+> [!NOTE]  
+> You can [download the latest version here](https://github.com/a8cteam51/query-loop-load-more/releases/latest/download/query-loop-load-more.zip)
+
 This WordPress plugin adds a load more option to the Query Loop Pagination block in Gutenberg, allowing users to load more posts without refreshing the page.
 
 ## Installation
