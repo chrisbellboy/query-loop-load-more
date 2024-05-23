@@ -3,7 +3,7 @@ Contributors: wpspecialprojects, tommusrhodus
 Tags: gutenberg, editor, block editor, load more, query loop
 Requires at least: 6.2
 Tested up to: 6.5.3
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires PHP: 8.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -28,6 +28,10 @@ Here is how to enable the load more option:
 * That's it! Your visitors can now load more posts by clicking the load more button without refreshing the page.
 
 == Changelog ==
+
+= 1.0.1 =
+* Fix - Unify GPL license
+* Fix - Unify text domain and plugin slug
 
 = 1.0.0 =
 Initial release.

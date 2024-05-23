@@ -3,7 +3,7 @@
  * Plugin Name:             Query Loop Load More
  * Plugin URI:              https://github.com/a8cteam51/query-loop-load-more
  * Description:             Adds a load more option to the Query Loop Pagination block in Gutenberg.
- * Version:                 1.0.0
+ * Version:                 1.0.1
  * Requires at least:       6.2
  * Tested up to:            6.5.3
  * Requires PHP:            8.0
