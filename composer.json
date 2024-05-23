@@ -4,7 +4,7 @@
 
   "description": "Adds a load more option to the Query Loop Pagination block in Gutenberg.",
   "homepage": "https://github.com/a8cteam51/query-loop-load-more",
-  "license": "GPL-2.0-or-later",
+  "license": "GPL-3.0-or-later",
   "authors": [
     {
       "name": "WordPress.com Special Projects Team",

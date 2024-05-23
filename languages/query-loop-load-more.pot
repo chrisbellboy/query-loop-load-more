@@ -1,5 +1,5 @@
 # Copyright (C) 2023 WordPress.com Special Projects
-# This file is distributed under the GPL v3 or later.
+# This file is distributed under the GPLv3 or later.
 msgid ""
 msgstr ""
 "Project-Id-Version: Query Loop Load More 1.0.0\n"

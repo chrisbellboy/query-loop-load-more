@@ -2,11 +2,11 @@
 Contributors: wpspecialprojects, tommusrhodus
 Tags: gutenberg, editor, block editor, load more, query loop
 Requires at least: 6.2
-Tested up to: 6.2
+Tested up to: 6.5.3
 Stable tag: 1.0.0
 Requires PHP: 8.0
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPLv3 or later
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 Adds a load more option to the Query Loop Pagination block in Gutenberg, allowing users to load more posts without refreshing the page.
 
