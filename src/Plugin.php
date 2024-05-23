@@ -165,13 +165,13 @@ class Plugin {
 		// Button text attribute.
 		$settings['attributes']['loadMoreText'] = array(
 			'type'    => 'string',
-			'default' => __( 'Load More', 'wpcomsp-qllm' ),
+			'default' => __( 'Load More', 'query-loop-load-more' ),
 		);
 
 		// Loading text attribute.
 		$settings['attributes']['loadingText'] = array(
 			'type'    => 'string',
-			'default' => __( 'Loading...', 'wpcomsp-qllm' ),
+			'default' => __( 'Loading...', 'query-loop-load-more' ),
 		);
 
 		return $settings;
