@@ -5,11 +5,11 @@
  * Description:             Adds a load more option to the Query Loop Pagination block in Gutenberg.
  * Version:                 1.0.0
  * Requires at least:       6.2
- * Tested up to:            6.4
+ * Tested up to:            6.5.3
  * Requires PHP:            8.0
  * Author:                  WordPress.com Special Projects
  * Author URI:              https://wpspecialprojects.wordpress.com
- * License:                 GPL v3 or later
+ * License:                 GPLv3 or later
  * License URI:             https://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain:             query-loop-load-more
  * Domain Path:             /languages
