@@ -213,6 +213,7 @@ class Plugin {
 
 		// Get query context for current page number and query Id.
 		$page_key         = isset( $block->context['queryId'] ) ? 'query-' . $block->context['queryId'] . '-page' : 'query-page';
+		$inherit          = isset( $block->context['query']['inherit'] ) ? $block->context['query']['inherit'] : false;
 		$page             = empty( $_GET[ $page_key ] ) ? 1 : (int) $_GET[ $page_key ]; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 		$block_query      = new \WP_Query( build_query_vars_from_query_block( $block, $page ) );
 		$buttons          = '';
@@ -221,9 +222,9 @@ class Plugin {
 		// Build list of load more links.
 		for ( $i = $page + 1; $i <= $block_query->max_num_pages; $i++ ) {
 			$buttons .= sprintf(
-				'<a class="%s" href="?%s=%d" data-loading-text="%s">%s</a>',
+				$inherit ? '<a class="%s" href="%s/page/%d/" data-loading-text="%s">%s</a>' : '<a class="%s" href="?%s=%d" data-loading-text="%s">%s</a>',
 				'wp-block-button__link wp-element-button wp-load-more__button',
-				esc_html( $page_key ),
+				$inherit ? '' : esc_html( $page_key ),
 				(int) $i,
 				esc_html( $attributes['loadingText'] ),
 				esc_html( $attributes['loadMoreText'] ) . $pagination_arrow

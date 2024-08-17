@@ -3,7 +3,7 @@ Contributors: wpspecialprojects, tommusrhodus
 Tags: gutenberg, editor, block editor, load more, query loop
 Requires at least: 6.2
 Tested up to: 6.6.1
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 Requires PHP: 8.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -29,10 +29,12 @@ Here is how to enable the load more option:
 
 == Changelog ==
 
+= 1.0.3 =
+* Fix - Loading more posts on "Inherit query from template" 
+
 = 1.0.2 =
 * Add - SVN deployment workflow
 * Update - Version and Stable tag
-
 
 = 1.0.1 =
 * Fix - Unify GPL license
