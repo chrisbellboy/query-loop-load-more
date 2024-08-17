@@ -28,6 +28,9 @@ That's it! Your visitors can now load more posts by clicking the load more butto
 
 ## Changelog
 
+### 1.0.4
+* Update - Version
+
 ### 1.0.3
 * Fix - Loading more posts on "Inherit query from template" 
 
