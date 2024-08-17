@@ -28,6 +28,10 @@ That's it! Your visitors can now load more posts by clicking the load more butto
 
 ## Changelog
 
+### 1.0.2
+* Add - SVN deployment workflow
+* Update - Version and Stable tag
+
 ### 1.0.1
 * Fix - Unify GPL license
 * Fix - Unify text domain and plugin slug
