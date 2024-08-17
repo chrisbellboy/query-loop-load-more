@@ -3,9 +3,9 @@
  * Plugin Name:             Query Loop Load More
  * Plugin URI:              https://github.com/a8cteam51/query-loop-load-more
  * Description:             Adds a load more option to the Query Loop Pagination block in Gutenberg.
- * Version:                 1.0.1
+ * Version:                 1.0.2
  * Requires at least:       6.2
- * Tested up to:            6.5.3
+ * Tested up to:            6.6.1
  * Requires PHP:            8.0
  * Author:                  WordPress.com Special Projects
  * Author URI:              https://wpspecialprojects.wordpress.com
@@ -28,7 +28,7 @@ define( 'WPCOMSP_QLLM_URL', plugin_dir_url( __FILE__ ) );
 // Load plugin translations so they are available even for the error admin notices.
 add_action(
 	'init',
-	static function() {
+	static function () {
 		load_plugin_textdomain(
 			WPCOMSP_QLLM_METADATA['TextDomain'],
 			false,
@@ -41,7 +41,7 @@ add_action(
 if ( ! is_file( WPCOMSP_QLLM_PATH . 'vendor/autoload.php' ) ) {
 	add_action(
 		'admin_notices',
-		static function() {
+		static function () {
 			$message      = __( 'It seems like <strong>Query Loop Load More</strong> is corrupted. Please reinstall!', 'query-loop-load-more' );
 			$html_message = wp_sprintf( '<div class="error notice wpcomsp-qllm-error">%s</div>', wpautop( $message ) );
 			echo wp_kses_post( $html_message );
@@ -58,7 +58,7 @@ define( 'WPCOMSP_QLLM_REQUIREMENTS', $wpcomsp_qllm_requirements );
 if ( $wpcomsp_qllm_requirements instanceof WP_Error ) {
 	add_action(
 		'admin_notices',
-		static function() use ( $wpcomsp_qllm_requirements ) {
+		static function () use ( $wpcomsp_qllm_requirements ) {
 			$html_message = wp_sprintf( '<div class="error notice wpcomsp-qllm-error">%s</div>', $wpcomsp_qllm_requirements->get_error_message() );
 			echo wp_kses_post( $html_message );
 		}

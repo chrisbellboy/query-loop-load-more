@@ -1,0 +1,12 @@
+# Directories
+/.git
+/.github
+/.wordpress-org
+/node_modules
+
+# Files
+.*
+composer.lock
+package-lock.json
+package.json
+README.md
