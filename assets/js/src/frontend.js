@@ -1,3 +1,7 @@
+
+// Keep a record of the page we have loaded.
+const pages = [];
+
 const intersectionObserver = new IntersectionObserver( ( entries ) => {
 	// If intersectionRatio is 0, the target is out of view.
 	if ( entries[ 0 ].intersectionRatio <= 0 ) return;
@@ -8,7 +12,14 @@ const intersectionObserver = new IntersectionObserver( ( entries ) => {
 			.querySelector( '.wp-block-post-template' ),
 		$clickedButton = entries[ 0 ].target;
 
-	fetchPosts( $url, $container, $clickedButton );
+	// Get the page id from url arg page=n
+	const page = $url.match( /page=(\d+)/ );
+
+	// If we have a page and its not already in the pages array, add it.
+	if ( page && ! pages.includes( page[1] ) ) {
+		pages.push( page[1] );
+		fetchPosts( $url, $container, $clickedButton );
+	}
 } );
 
 /**
