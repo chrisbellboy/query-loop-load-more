@@ -13,7 +13,7 @@ const intersectionObserver = new IntersectionObserver( ( entries ) => {
 		$clickedButton = entries[ 0 ].target;
 
 	// Get the page id from url arg page=n
-	const page = $url.match( /page=(\d+)/ );
+	const page = new URL( $url ).searchParams.get( 'page' )
 
 	// If we have a page and its not already in the pages array, add it.
 	if ( page && ! pages.includes( page[1] ) ) {
