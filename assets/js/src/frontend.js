@@ -1,3 +1,69 @@
+// Keep a record of the page we have loaded, per query.
+const pages = {};
+
+/**
+ * Gets the query and page from a URL string
+ * @param {string} str The query string for url
+ * @returns {query: number, page: number} | null
+ */
+const extractQueryParams = ( str ) => {
+	// Default values
+	let query = null;
+	let page = null;
+
+	// Regular expressions to match query and page
+	const queryMatch = str.match( /query-(\d+)/ );
+	const pageMatch = str.match( /page=(\d+)/ );
+
+	// Extract and convert to integer if matches are found
+	if ( queryMatch ) {
+		query = parseInt( queryMatch[ 1 ], 10 );
+	}
+
+	if ( pageMatch ) {
+		page = parseInt( pageMatch[ 1 ], 10 );
+	}
+
+	// If either are null, return null
+	if ( query === null || page === null ) {
+		return null;
+	}
+
+	return { query, page };
+};
+
+/**
+ * Checks if a given query and page is in the pages object
+ *
+ * @param {number} query The query ID
+ * @param {number} page The page number
+ *
+ * @returns {boolean}
+ */
+const isPageLoaded = ( query, page ) => {
+	if ( pages[ query ] && pages[ query ].includes( page ) ) {
+		return true;
+	} else {
+		return false;
+	}
+};
+
+/**
+ * Logs a given query and page to the pages object
+ *
+ * @param {number} query The query ID
+ * @param {number} page The page number
+ *
+ * @returns {void}
+ */
+const logPage = ( query, page ) => {
+	if ( ! pages[ query ] ) {
+		pages[ query ] = [];
+	}
+
+	pages[ query ].push( page );
+};
+
 const intersectionObserver = new IntersectionObserver( ( entries ) => {
 	// If intersectionRatio is 0, the target is out of view.
 	if ( entries[ 0 ].intersectionRatio <= 0 ) return;
@@ -8,7 +74,19 @@ const intersectionObserver = new IntersectionObserver( ( entries ) => {
 			.querySelector( '.wp-block-post-template' ),
 		$clickedButton = entries[ 0 ].target;
 
-	fetchPosts( $url, $container, $clickedButton );
+	// Get the query and page from the button href.
+	const queryLoopParams = extractQueryParams(
+		$clickedButton.getAttribute( 'href' )
+	);
+
+	// If we have a page and its not already in the pages array, add it.
+	if (
+		queryLoopParams &&
+		isPageLoaded( queryLoopParams.query, queryLoopParams.page ) === false
+	) {
+		logPage( queryLoopParams.query, queryLoopParams.page );
+		fetchPosts( $url, $container, $clickedButton );
+	}
 } );
 
 /**
