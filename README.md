@@ -28,6 +28,10 @@ That's it! Your visitors can now load more posts by clicking the load more butto
 
 ## Changelog
 
+### 1.0.6
+* Add - No More Posts text option and functionality
+* Fix - Minor bug when Infinite scroll reached the end of the posts
+
 ### 1.0.5
 * Fix - Infinite scroll would duplicate some posts due to the same AJAX call being executed twice
 

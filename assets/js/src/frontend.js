@@ -123,6 +123,20 @@ const fetchPosts = ( url, container, clickedButton ) => {
 			// Update the window URL.
 			window.history.pushState( {}, '', url );
 
+			const nextElement = clickedButton.nextElementSibling;
+
+			if (
+				nextElement &&
+				nextElement.classList.contains(
+					'wp-load-more__button__no-more-posts'
+				)
+			) {
+				// No more posts to load.
+				container.classList.add(
+					'wp-block-post-template__no-more-posts'
+				);
+			}
+
 			// Remove button.
 			clickedButton.remove();
 
@@ -161,9 +175,14 @@ const hideLoader = () => {
 	}
 
 	$loader[ 0 ].classList.remove( 'loading' );
-	intersectionObserver.observe(
-		document.querySelector( '.wp-load-more__button' )
-	);
+
+	const loadMoreButton = document.querySelector( '.wp-load-more__button' );
+
+	if ( ! loadMoreButton ) {
+		return;
+	}
+
+	intersectionObserver.observe( loadMoreButton );
 };
 
 /**
